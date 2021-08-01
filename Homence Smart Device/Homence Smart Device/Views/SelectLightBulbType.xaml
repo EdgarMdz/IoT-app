@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Homence_Smart_Device.Views.SelectLightBulbType"
+      x:Name="this"
+      Padding="10,2">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="3*"/>
+    </Grid.RowDefinitions>
+
+    <Frame Grid.RowSpan="2" CornerRadius="10" BackgroundColor="#55646464"/>
+    <Label Margin="10,0" Text="{Binding Text, Source={x:Reference this}}" TextColor="White" FontFamily="Poppins Medium" FontSize="20"
+           HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="Transparent"/>
+    <Grid x:Name="lighBulbsgrid" Grid.Row="1" RowDefinitions="2*,*"  ColumnDefinitions="*,*,*,*" HorizontalOptions="Fill">
+        <!--this boxview is going to be animated and reallocated on the selected light bulb type-->
+        <BoxView Grid.Row="0" Grid.Column="0"  x:Name="gradientBoxView"  HorizontalOptions="Center" 
+                 VerticalOptions="Center"
+                  WidthRequest="73"
+                  HeightRequest="73"
+                 IsVisible="False">
+            <BoxView.Background>
+                <RadialGradientBrush>
+                    <GradientStop x:Name="gradientStopStart" Color="#FDDC97" Offset="0"/>
+                    <GradientStop x:Name="gradientStopMiddle" Color="#aaFDDC97" Offset="0.7"/>
+                    <GradientStop x:Name="gradientStopEnd" Color="#00FDDC97" Offset="01"/>
+                </RadialGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        <!--Fillament Light Bulb-->
+        <Image Grid.Column="0" Grid.Row="0" Source="lightBulbIcon.png" WidthRequest="63" HeightRequest="63"
+               HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent"/>
+        <Label Grid.Row="1" x:Name="FilamentLbl" Text="Filament" FontSize="13" FontFamily="Poppins Medium" TextColor="white" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Button x:Name="filamentBtn" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Clicked="filamentBtn_Clicked" BackgroundColor="Transparent"/>
+        <!--Fluorescent Light Bulb-->
+        <Image Grid.Column="1" Source="FluorescentLightBulbIcon.png" WidthRequest="63" HeightRequest="63"
+               HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent"/>
+        <Label Grid.Column="1" Grid.Row="1" x:Name="fluorescentLbl" Text="Fluorescent" FontSize="13" FontFamily="Poppins Medium" TextColor="white" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Button x:Name="fluorescentBtn" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Clicked="fluorescentBtn_Clicked" BackgroundColor="Transparent"/>
+        <!--LED Light Bulb-->
+        <Image Grid.Column="2" Source="LedBulbIcon.png" WidthRequest="63" HeightRequest="63"
+               HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Label Grid.Column="2" Grid.Row="1" x:Name="LEDLbl" Text="LED" FontSize="13" FontFamily="Poppins Medium" TextColor="white" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Button x:Name="LEDBtn" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Clicked="LEDBtn_Clicked" BackgroundColor="Transparent"/>
+        <!--Smart Light Bulb-->
+        <Image Grid.Column="3" Source="SmartBulbIcon.png" WidthRequest="63" HeightRequest="63"
+               HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Label Grid.Column="3" Grid.Row="1" x:Name="SmartLbl" Text="Smart" FontSize="13" FontFamily="Poppins Medium" TextColor="white" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Button x:Name="smartBtn" Grid.Row="0"  Grid.Column="3" Grid.RowSpan="2" Clicked="smartBtn_Clicked" BackgroundColor="Transparent"/>
+    </Grid>
+</Grid>

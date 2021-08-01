@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Homence_Smart_Device.Views.LightBulbBrandView"
+             Padding="10,2">
+
+    <Frame  CornerRadius="10" BackgroundColor="#55646464"/>
+    <StackLayout Orientation="Vertical" Padding="10,10" Spacing="10">
+        <Label Text="Brand" TextColor="White" FontSize="20" FontFamily="Poppins Medium"  VerticalOptions="Center" HorizontalOptions="Start" 
+               HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+        <Grid RowDefinitions="*" ColumnDefinitions="*,*,*" VerticalOptions="Fill" ColumnSpacing="48" Padding="10">
+            <ImageButton x:Name="HueBtn" Grid.Column="0" Source="hue.png" BackgroundColor="#CCC4C4C4" WidthRequest="100" HeightRequest="100" CornerRadius="15" Opacity="0.8" Clicked="ImageButton_Clicked"/>
+            <ImageButton x:Name="LifxBtn" Grid.Column="1" Source="lifx.png" BackgroundColor="#CCC4C4C4" WidthRequest="100" HeightRequest="100" CornerRadius="15" Opacity="0.8" Clicked="ImageButton_Clicked"/>
+            <ImageButton x:Name="NanoleafBtn" Grid.Column="2" Source="nanoleaf.png" BackgroundColor="#CCC4C4C4" WidthRequest="100" HeightRequest="100" CornerRadius="15" Opacity="0.8" Clicked="ImageButton_Clicked"/>
+        </Grid>
+    </StackLayout>
+</Grid>

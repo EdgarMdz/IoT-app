@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:homence_smart_device="clr-namespace:Homence_Smart_Device"
+             x:Class="Homence_Smart_Device.MainPage" BackgroundColor="#241e20"
+             Visual="Material">
+    
+    <Grid>
+        <Image x:Name="LightBulbImg" Source="lightbulb.jpg" Margin="0,-80,0,0"/>
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" BackgroundColor="Transparent" VerticalOptions="Center" Margin="0,350,0,0" Spacing="30" 
+                 Padding="10">
+            <Label 
+            Text="Homence" 
+            HorizontalOptions="Center" 
+            TextColor="White" 
+            FontSize="43" 
+            FontAttributes="Bold" 
+            FontFamily="Syncopate" 
+            WidthRequest="350"
+            HorizontalTextAlignment="Center"/>
+            <homence_smart_device:CustomEntry 
+            x:Name="UserTxt"
+            IsPassword="False" 
+            BackgroundColor="Transparent"
+            BorderColor="#FDD497"
+            BorderThickness="1"
+            CornerRadius="10"
+            HorizontalOptions="Center"
+            WidthRequest="350"
+            HeightRequest="50"
+            FontAttributes="Bold" 
+            FontSize="13" 
+            FontFamily="Poppins Bold" 
+            HorizontalTextAlignment="Start"               
+            VerticalTextAlignment="Center" 
+            Placeholder="User" 
+            TextColor="White" 
+            PlaceholderColor="LightGray" 
+            Keyboard="Email" 
+            Padding="15,5,0,0"/>
+
+            <homence_smart_device:CustomEntry 
+            x:Name="passTxt"
+            IsPassword="True" 
+            BackgroundColor="Transparent"
+            BorderColor="#FDD497"
+            BorderThickness="1"
+            CornerRadius="10"
+            HorizontalOptions="Center"
+            WidthRequest="350"
+            HeightRequest="50"
+            FontAttributes="Bold" 
+            FontSize="13" 
+            FontFamily="Poppins Bold" 
+            HorizontalTextAlignment="Start"               
+            VerticalTextAlignment="Center" 
+            Placeholder="Password" 
+            TextColor="White" 
+            PlaceholderColor="LightGray" 
+            Padding="15,5,0,0"
+            />
+            <Button 
+                x:Name="SignInBtn"
+                Text="Sign in" 
+                BackgroundColor="#241e20" 
+                TextColor="White" 
+                BorderColor="#FDD497" 
+                FontAttributes="Bold" 
+                FontFamily="Syncopate" 
+                Font="13"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" 
+                CornerRadius="15" 
+                BorderWidth="5" 
+                WidthRequest="261" 
+                HeightRequest="50" Clicked="SignInBtn_Clicked">
+                <Button.Triggers>
+                    <EventTrigger Event="Pressed">
+                        <homence_smart_device:ButtonTriggerAction BackgroundColor="#FDD497"/>
+                    </EventTrigger>
+                    <EventTrigger Event="Released">
+                        <homence_smart_device:ButtonTriggerAction BackgroundColor="#241e20"/>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Line X1="0" Y1="5" X2="50" Y2="5" Stroke="Dimgray" VerticalOptions="Center"/>
+                <Label Text="or" TextColor="White" FontSize="15" FontFamily="poppins" VerticalOptions="Center"/>
+                <Line X1="0" Y1="5" X2="50" Y2="5" Stroke="Dimgray" VerticalOptions="Center"/>
+            </StackLayout>
+            <Grid>
+                <Frame BackgroundColor="#241e20" BorderColor="#FDD497" CornerRadius="10" WidthRequest="160" 
+                       VerticalOptions="Center" HorizontalOptions="Center">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Padding="15,0" InputTransparent="True">
+                    <Button Text="Sign in with" 
+                    BackgroundColor="#241e20" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    FontFamily="Syncopate" 
+                    Font="12"
+                    VerticalOptions="Center" 
+                    BorderWidth="0" 
+                    WidthRequest="140" 
+                    HeightRequest="35" InputTransparent="True">
+                    </Button>
+                    <Image Source="googleLogo.png" WidthRequest="14" HeightRequest="14" InputTransparent="True"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        <Frame x:Name="CoverFrame" BackgroundColor="Black" InputTransparent="True">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapped"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </Grid>
+</ContentPage>

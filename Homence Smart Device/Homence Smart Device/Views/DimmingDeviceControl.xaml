@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="Homence_Smart_Device.Views.DimingDeviceControl"
+      x:Name="this"
+      BindingContextChanged="this_BindingContextChanged">
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="3*"/>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    
+    
+    <Frame x:Name="backgroundFrame" CornerRadius="24.25" IsVisible="{Binding ShowBackgroundFrame,Source={x:Reference this}}" BackgroundColor="#9E9C9C" Opacity="0.3" Grid.ColumnSpan="2"/>
+    <Label Text="{Binding Title, Source={x:Reference this}}" FontFamily="{Binding FontFamily,Source={x:Reference this}}"
+           FontSize="{Binding FontSize,Source={x:Reference this}}" TextColor="{Binding  TextColor,Source={x:Reference this}}"
+           HorizontalOptions="Fill" VerticalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="{Binding HorizontalTextAlignment,Source={x:Reference this}}"
+           Margin="13,0"
+           />
+    <Slider x:Name="DimmingSlider" Grid.Row="1" HeightRequest="30" BackgroundColor="Transparent" Maximum="190"  Value="{Binding}"
+            ValueChanged="Slider_ValueChanged" VerticalOptions="Fill" ThumbColor="#BB9B76" MinimumTrackColor="#FDDC97"/>
+
+    <Grid x:Name="LightBulbGrid" Grid.Row="0" Grid.Column="1">
+        <BoxView x:Name="gradientBoxView"  HorizontalOptions="Center" 
+                 VerticalOptions="Center"
+                  WidthRequest="73"
+                  HeightRequest="73"
+                 IsVisible="false">
+            <BoxView.Background>
+                <RadialGradientBrush>
+                    <GradientStop x:Name="gradientStopStart" Color="#FDDC97" Offset="0"/>
+                    <GradientStop x:Name="gradientStopMiddle" Color="#00FDDC97" Offset="0.7"/>
+                    <GradientStop x:Name="gradientStopEnd" Color="#00FDDC97" Offset="01"/>
+                </RadialGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        <Image Source="{Binding Icon, Source={x:Reference this}}" WidthRequest="63" HeightRequest="63" 
+               HorizontalOptions="Center" VerticalOptions="Center"/>
+    </Grid>
+    <ScrollView x:Name="ColorsScrollView" Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Fill" 
+                VerticalOptions="CenterAndExpand"  Margin="15,0" HorizontalScrollBarVisibility="Never">
+        <StackLayout BindableLayout.ItemsSource="{Binding SmartBulbColorSelection, Source={x:Reference this}}" Spacing="20" HeightRequest="50" Orientation="Horizontal">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Button CornerRadius="50" WidthRequest="30" HeightRequest="30" BackgroundColor="{Binding }" BorderColor="White" BorderWidth="2" 
+                            VerticalOptions="Center" Clicked="Button_Clicked"/>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+    </ScrollView>
+</Grid>

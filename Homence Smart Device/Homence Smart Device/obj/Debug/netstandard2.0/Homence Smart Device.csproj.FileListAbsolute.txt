@@ -1,0 +1,19 @@
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\bin\Debug\netstandard2.0\Homence Smart Device.deps.json
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\bin\Debug\netstandard2.0\Homence Smart Device.dll
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\bin\Debug\netstandard2.0\ref\Homence Smart Device.dll
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\bin\Debug\netstandard2.0\Homence Smart Device.pdb
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Views\DimmingDeviceControl.xaml.g.cs
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Views\SmartSwitchesView.xaml.g.cs
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Homence Smart Device.AssemblyInfoInputs.cache
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Homence Smart Device.AssemblyInfo.cs
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Homence Smart Device.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Homence Smart Device.dll
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\ref\Homence Smart Device.dll
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Homence Smart Device.pdb
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Homence Smart Device.csproj.AssemblyReference.cache
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Views\ConfigureSwitch.xaml.g.cs
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Views\SelectLightBulbType.xaml.g.cs
+C:\Users\DELL\source\repos\Homence Smart Device\Homence Smart Device\Homence Smart Device\obj\Debug\netstandard2.0\Views\LightBulbBrandView.xaml.g.cs
