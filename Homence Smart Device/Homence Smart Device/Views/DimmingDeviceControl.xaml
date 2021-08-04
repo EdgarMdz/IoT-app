@@ -24,13 +24,12 @@
         <BoxView x:Name="gradientBoxView"  HorizontalOptions="Center" 
                  VerticalOptions="Center"
                   WidthRequest="73"
-                  HeightRequest="73"
-                 IsVisible="false">
+                  HeightRequest="73">
             <BoxView.Background>
                 <RadialGradientBrush>
                     <GradientStop x:Name="gradientStopStart" Color="#FDDC97" Offset="0"/>
-                    <GradientStop x:Name="gradientStopMiddle" Color="#00FDDC97" Offset="0.7"/>
-                    <GradientStop x:Name="gradientStopEnd" Color="#00FDDC97" Offset="01"/>
+                    <GradientStop x:Name="gradientStopMiddle" Color="#f1FDDC97" Offset="0.7"/>
+                    <GradientStop x:Name="gradientStopEnd" Color="#00FDDC97" Offset="1"/>
                 </RadialGradientBrush>
             </BoxView.Background>
         </BoxView>

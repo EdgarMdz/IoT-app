@@ -29,7 +29,7 @@ namespace Homence_Smart_Device.Views
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 
-        private void LightBulbBrandView_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        /*private void LightBulbBrandView_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(IsVisible))
             {
@@ -39,15 +39,15 @@ namespace Homence_Smart_Device.Views
                 if (control.IsVisible)
                     DisplayView(control);
             }
-        }
+        }*/
 
-        private void DisplayView(LightBulbBrandView control)
+        private void DisplayView(LightBulbBrandView control, double start, double end)
         {
             void displayAnimation(double height)
             => control.HeightRequest = height;
 
 
-            control.Animate("DisplayAnimation", displayAnimation, start: 0, end: control.Height == -1 ? control.HeightRequest: control.Height, easing: Easing.SinIn, length: 250);
+            control.Animate("DisplayAnimation", displayAnimation, start: start, end: end, easing: Easing.SinOut, length: 250);
             
         }
 
@@ -55,6 +55,22 @@ namespace Homence_Smart_Device.Views
         {
             await DisplayAlert("", "Configuration saved.", "Ok");
             await Application.Current.MainPage.Navigation.PopAsync();
+        }
+
+        private  void LightBulbTypeSelector_SelectedItemChanged(object sender, EventArgs e)
+        {
+            var control = sender as SelectLightBulbType;
+            if(control.IsSmart)
+            {
+                BrandSelector.IsVisible = true;
+                DisplayView(BrandSelector, 0, 202);
+                
+            }
+            else
+            {
+                DisplayView(BrandSelector,202, 0);
+            }
+
         }
     }
 }

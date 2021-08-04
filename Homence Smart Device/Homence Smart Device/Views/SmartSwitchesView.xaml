@@ -25,17 +25,14 @@
                     <DataTemplate>
                         <Grid>
                             <Frame BackgroundColor="#646464" CornerRadius="10" Opacity="0.3" HorizontalOptions="Fill" VerticalOptions="Fill"/>
-                            <xct:Expander IsExpanded="True">
-                                <xct:Expander.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                </xct:Expander.GestureRecognizers>
+                            <xct:Expander IsExpanded="True" Tapped="TapGestureRecognizer_Tapped">
                                 <xct:Expander.Header>
-                                    <StackLayout Orientation="Horizontal">
-                                        <ImageButton Source="arrowicon.png" BackgroundColor="Transparent" WidthRequest="16" HeightRequest="16"/>
-                                        <Label Text="{Binding Name}" FontFamily="Poppins" FontSize="22" TextColor="White"/>
+                                    <StackLayout Orientation="Horizontal" Padding="10,0">
+                                        <ImageButton Source="arrowicon.png" BackgroundColor="Transparent" WidthRequest="16" HeightRequest="16" InputTransparent="True"/>
+                                        <Label Text="{Binding Name}" FontFamily="Poppins" FontSize="22" TextColor="White" InputTransparent="True"/>
                                     </StackLayout>
                                 </xct:Expander.Header>
-                                <ListView  HeightRequest="360" ItemsSource="{Binding lightBulbs}" SeparatorVisibility="Default" HasUnevenRows="True" VerticalScrollBarVisibility="Never">
+                                <ListView  HeightRequest="360" ItemsSource="{Binding LightBulbs}" SeparatorVisibility="Default" HasUnevenRows="True" VerticalScrollBarVisibility="Never">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <ViewCell Tapped="ViewCell_Tapped">

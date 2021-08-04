@@ -30,7 +30,7 @@ namespace Homence_Smart_Device.Views
 
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
-            var button = sender as ImageButton;
+            var button = sender as View;
 
             if (button is null) return;
 
@@ -43,6 +43,7 @@ namespace Homence_Smart_Device.Views
             NanoleafBtn.BackgroundColor = InactiveColor;
             HueBtn.BackgroundColor = InactiveColor;
             LifxBtn.BackgroundColor = InactiveColor;
+            OtherBtn.BackgroundColor = InactiveColor;
         }
     }
 }

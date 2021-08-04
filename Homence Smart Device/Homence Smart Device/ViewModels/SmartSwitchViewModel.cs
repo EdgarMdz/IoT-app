@@ -19,11 +19,11 @@ namespace Homence_Smart_Device.ViewModels
                 new SmartSwitch
                 {
                     Name="Kitchen",
-                    lightBulbs=new List<LightBulb>
+                    LightBulbs=new List<LightBulb>
                     {
                         new LightBulb{Name="Device 1", Colors=new List<Color>(){ Color.White },
-                            DimmingValue=0, Image="lightbulbicon.png",IsSmartBulb=false},
-                        new LightBulb{Name="Device 2", Colors = new List<Color>(){ Color.Black, Color.CadetBlue, Color.Chocolate, Color.CornflowerBlue,
+                            DimmingValue=120, Image="lightbulbicon.png",IsSmartBulb=false},
+                        new LightBulb{Name="Device 2", Colors = new List<Color>(){ Color.Magenta, Color.CadetBlue, Color.Chocolate, Color.CornflowerBlue,
                             Color.DeepPink, Color.ForestGreen, Color.MediumPurple, Color.LightSeaGreen, Color.OrangeRed, Color.Coral},
                             DimmingValue=0, Image="SmartBulbIcon.png", IsSmartBulb=true},
                         new LightBulb{Name="Device 3", Colors=new List<Color>(){ Color.White },
@@ -33,14 +33,14 @@ namespace Homence_Smart_Device.ViewModels
                 new SmartSwitch
                 {
                     Name="Garden",
-                    lightBulbs=new List<LightBulb>
+                    LightBulbs=new List<LightBulb>
                     {
                         new LightBulb{Name="Device 1", Colors=new List<Color>(){ Color.White },
                             DimmingValue=0, Image="lightbulbicon.png",IsSmartBulb=false},
-                        new LightBulb{Name="Device 2", Colors = new List<Color>(){ Color.Black, Color.CadetBlue, Color.Chocolate, Color.CornflowerBlue,
+                        new LightBulb{Name="Device 2", Colors = new List<Color>(){ Color.LemonChiffon, Color.CadetBlue, Color.Chocolate, Color.CornflowerBlue,
                             Color.DeepPink, Color.ForestGreen, Color.MediumPurple, Color.LightSeaGreen, Color.OrangeRed, Color.Coral},
                             DimmingValue=0, Image="SmartBulbIcon.png", IsSmartBulb=true},
-                        new LightBulb{Name="Device 3", Colors=new List<Color>(){ Color.White },
+                        new LightBulb{Name="Device 3", Colors=new List<Color>(){ Color.Red },
                             DimmingValue=0, Image="FluorescentLightBulbIcon.png", IsSmartBulb=false}
                     }
                 }

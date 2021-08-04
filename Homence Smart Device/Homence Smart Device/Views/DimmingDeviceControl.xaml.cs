@@ -99,19 +99,23 @@ namespace Homence_Smart_Device.Views
         {
             if (isSmart)
             {
-                this.RowDefinitions = new RowDefinitionCollection();
-                this.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(2, GridUnitType.Star) });
-                this.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(35, GridUnitType.Absolute) });
-                this.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(30 , GridUnitType.Absolute) });
+                this.RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition() { Height = new GridLength(2, GridUnitType.Star) },
+                    new RowDefinition() { Height = new GridLength(35, GridUnitType.Absolute) },
+                    new RowDefinition() { Height = new GridLength(30, GridUnitType.Absolute) }
+                };
 
                 SetRowSpan(backgroundFrame, 4);
                 SetRowSpan(LightBulbGrid, 4);
             }
             else
             {
-                this.RowDefinitions = new RowDefinitionCollection();
-                this.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(2, GridUnitType.Star) });
-                this.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(35, GridUnitType.Absolute) });
+                this.RowDefinitions = new RowDefinitionCollection
+                {
+                    new RowDefinition() { Height = new GridLength(2, GridUnitType.Star) },
+                    new RowDefinition() { Height = new GridLength(35, GridUnitType.Absolute) }
+                };
 
                 SetRowSpan(backgroundFrame, 3);
                 SetRowSpan(LightBulbGrid, 3);

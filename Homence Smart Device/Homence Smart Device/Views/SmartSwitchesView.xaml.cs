@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +15,9 @@ namespace Homence_Smart_Device.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SmartSwitchesView : ContentPage
     {
-        private GoogleUser googleUser;
-        IGoogleManager Manager;
-
+        private User googleUser;
+        private IGoogleManager Manager;
+        private SmartSwitch @SmartSwitch { get; set; }
         ViewCell LastCell { get; set; }
 
         public SmartSwitchesView()
@@ -26,7 +26,7 @@ namespace Homence_Smart_Device.Views
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        public SmartSwitchesView(GoogleUser googleUser, IGoogleManager googleManager)
+        public SmartSwitchesView(User googleUser, IGoogleManager googleManager)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
@@ -35,8 +35,11 @@ namespace Homence_Smart_Device.Views
             Manager = googleManager;
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
+            var se = sender as Expander;
+            var image = (se.Header as StackLayout).Children[0] as ImageButton;
+            await image.RotateXTo(se.IsExpanded ? -360 : -180, 250, easing: Easing.SinIn);
             
         }
 

@@ -23,7 +23,7 @@ namespace Homence_Smart_Device.Droid
 {
     class GoogleManager: Java.Lang.Object, IGoogleManager, GoogleApiClient.IConnectionCallbacks, GoogleApiClient.IOnConnectionFailedListener
     {
-		public Action<GoogleUser, string> _onLoginComplete;
+		public Action<User, string> _onLoginComplete;
 		public static GoogleApiClient _googleApiClient { get; set; }
 		public static GoogleManager Instance { get; private set; }
 		Context _context;
@@ -34,7 +34,7 @@ namespace Homence_Smart_Device.Droid
 			Instance = this;
 		}
 
-		public void Login(Action<GoogleUser, string> onLoginComplete)
+		public void Login(Action<User, string> onLoginComplete)
 		{
 			GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DefaultSignIn)
 															 .RequestEmail()
@@ -67,7 +67,7 @@ namespace Homence_Smart_Device.Droid
 			if (result.IsSuccess)
 			{
 				GoogleSignInAccount accountt = result.SignInAccount;
-				_onLoginComplete?.Invoke(new GoogleUser()
+				_onLoginComplete?.Invoke(new User()
 				{
 					Name = accountt.DisplayName,
 					Email = accountt.Email,
