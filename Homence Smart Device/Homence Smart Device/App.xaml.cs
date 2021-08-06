@@ -14,7 +14,7 @@ namespace Homence_Smart_Device
         {
             InitializeComponent();
             Device.SetFlags(new []{ "Shapes_Experimental", "Brush_Experimental" });
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new LighBulbTimerView());
         }
 
         protected override void OnStart()
