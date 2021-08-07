@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:color="clr-namespace:ColorPicker;assembly=ColorPicker"
+             x:Class="Homence_Smart_Device.Views.LightBulbColorView" BackgroundColor="Black">
+
+    <StackLayout Spacing="10">
+        <color:ColorCircle x:Name="ColorPicker" Grid.Row="1" Grid.Column="2" ShowLuminosityWheel="True" />
+        <StackLayout Orientation="Vertical" HorizontalOptions="Start" Margin="30,20">
+            <Label Text="Saved Colors" TextColor="White"/>
+            <FlexLayout x:Name="SavedColorsFlexLayout" Direction="Row" Wrap="Wrap" JustifyContent="Start">
+                <ImageButton Margin="10" CornerRadius="50" Source="addIcon.png" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent" Clicked="ImageButton_Clicked"/>
+                <Button Margin="10" CornerRadius="50" WidthRequest="40" HeightRequest="40" BackgroundColor="White" BorderColor="White"  BorderWidth="3" Clicked="SetColor_Clicked"/>
+            </FlexLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentView>

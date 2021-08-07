@@ -60,7 +60,7 @@ namespace Homence_Smart_Device.Views
                 LastCell = viewcell;
             }
 
-            await Application.Current.MainPage.Navigation.PushAsync(new ConfigureInactiveSwitch());
+            await Application.Current.MainPage.Navigation.PushAsync(new ConfigureActiveSwitch());
         }
 
         private async void LogOut(object sender, EventArgs e)

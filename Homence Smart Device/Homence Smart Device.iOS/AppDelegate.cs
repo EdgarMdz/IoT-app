@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using ProgressRingControl.Forms.Plugin.iOS;
 using UIKit;
 using Xamarin.Forms;
 
@@ -24,7 +25,10 @@ namespace Homence_Smart_Device.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
             FormsMaterial.Init();
+            ProgressRingRenderer.Init();
+            
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }
