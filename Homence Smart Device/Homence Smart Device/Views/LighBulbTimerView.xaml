@@ -2,7 +2,6 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Homence_Smart_Device.ViewModels" 
-             xmlns:color="clr-namespace:ColorPicker;assembly=ColorPicker"
              xmlns:progressBar="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
              x:Class="Homence_Smart_Device.Views.LighBulbTimerView" 
              BackgroundColor="Black">
@@ -10,9 +9,9 @@
         <vm:TimerValuesViewModel x:Name="vm"/>
     </ContentView.BindingContext>
 
-    <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center" VerticalOptions="Fill" HorizontalOptions="Fill" >
-        
-        <Grid x:Name="PickerGrid" RowDefinitions="*,Auto" ColumnDefinitions="*,*,*" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100" WidthRequest="300">
+    <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="Fill"  Spacing="200">
+
+        <Grid x:Name="PickerGrid" RowDefinitions="*,Auto" ColumnDefinitions="*,*,*" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100" WidthRequest="300" Margin="0,150,0,0">
             <Label Text="Hours" TextColor="#a0ffffff" HorizontalTextAlignment="Center" FontFamily="Poppins Medium"  Grid.Column="0" Grid.Row="0"/>
             <Label Text="Minutes" TextColor="#a0ffffff" HorizontalTextAlignment="Center" FontFamily="Poppins Medium"  Grid.Column="1" Grid.Row="0"/>
             <Label Text="Seconds" TextColor="#a0ffffff" HorizontalTextAlignment="Center" FontFamily="Poppins Medium"  Grid.Column="2" Grid.Row="0"/>
@@ -21,10 +20,9 @@
             <Picker x:Name="secondPicker" ItemsSource="{Binding Values.MinuteAndSecondValues}" TextColor="White" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="2" SelectedIndex="0" FontFamily="Poppins Medium" FontSize="20" SelectedIndexChanged="TimePicker_SelectedIndexChanged"/>
         </Grid>
         <Button x:Name="startButton" Text="Start"  HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="#CCFFD273" WidthRequest="100" HeightRequest="100" CornerRadius="50" FontFamily="Poppins Bold" FontSize="15"
-                Clicked="startButton_Clicked" Margin="50"/>
-        <Grid x:Name="CountdownGrid" IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center" Padding="30">
-            
-            <Grid ColumnDefinitions="*,*,Auto,*,Auto,*,*" WidthRequest="500" HeightRequest="500" HorizontalOptions="Center" VerticalOptions="Center">
+                Clicked="startButton_Clicked"/>
+        <Grid x:Name="CountdownGrid" IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,50,0,0">
+            <Grid ColumnDefinitions="*,*,Auto,*,Auto,*,*" WidthRequest="600" HeightRequest="600" HorizontalOptions="Center" VerticalOptions="Center">
                 <progressBar:ProgressRing x:Name="ProgressRing"  AnimatedProgress="1"  RingThickness="8" RingProgressColor="#FDD497" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="
                                        300" HeightRequest="300" AnimationEasing="Linear" Grid.ColumnSpan="7" />
                 <Label x:Name="HourCountDown" FontFamily="Poppins Bold" FontSize="25" Text="00" TextColor="White" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  />
@@ -34,12 +32,12 @@
                 <Label x:Name="SecondCountDown" FontFamily="Poppins Bold" FontSize="25" Text="00" TextColor="White" Grid.Column="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
             </Grid>
         </Grid>
-        <Grid ColumnDefinitions="*,*,*,*,*" Padding="100,50" x:Name="ButtonLayout" IsVisible="False">
+        <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceAround" Padding="10,50" x:Name="ButtonLayout" IsVisible="False" HorizontalOptions="Fill"  >
             <Button x:Name="PauseButton" Text="Pause"  HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="#aaFFD273" WidthRequest="120" HeightRequest="50" 
                      CornerRadius="50" FontFamily="Poppins Medium" FontSize="15"               
-                    Grid.Column="1" Clicked="PauseButton_Clicked"/>
-            <Button x:Name="CancelButton" Text="Cancel"  HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="#5CFFD273" WidthRequest="120" HeightRequest="50" CornerRadius="50" FontFamily="Poppins Medium" FontSize="15"
-                Grid.Column="3" Clicked="CancelButton_Clicked"/>
-        </Grid>
-    </FlexLayout>
+                    Grid.Column="0" Clicked="PauseButton_Clicked"/>
+            <Button x:Name="CancelButton" Text="Cancel"  HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="#5CFFD273" WidthRequest="120" HeightRequest="50"
+                    CornerRadius="50" FontFamily="Poppins Medium" FontSize="15"  Grid.Column="1" Clicked="CancelButton_Clicked"/>
+        </FlexLayout>
+    </StackLayout>
 </ContentView>

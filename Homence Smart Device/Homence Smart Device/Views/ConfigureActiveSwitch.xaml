@@ -1,23 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:views="clr-namespace:Homence_Smart_Device.Views"
-             xmlns:ct="http://xamarin.com/schemas/2020/toolkit"
-            x:Class="Homence_Smart_Device.Views.ConfigureActiveSwitch"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Viewmodels="clr-namespace:Homence_Smart_Device.ViewModels" xmlns:views="clr-namespace:Homence_Smart_Device.Views" xmlns:ct="http://xamarin.com/schemas/2020/toolkit" xmlns:color="clr-namespace:ColorPicker;assembly=ColorPicker" xmlns:progressBar="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
+             x:Class="Homence_Smart_Device.Views.ConfigureActiveSwitch"
             Visual="Material" BackgroundColor="Black">
-    <StackLayout>
+    <ContentPage.BindingContext>
+        <Viewmodels:TimerValuesViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    
+    <Grid RowDefinitions="*,10*,*" VerticalOptions="Fill" HorizontalOptions="Fill">
         <Grid Grid.Row="0" ColumnDefinitions="*,5*,*" Padding="25,20">
             <ImageButton Source="backIcon.png" HeightRequest="15" WidthRequest="15" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="ImageButton_Clicked"/>
             <Label Text="Living room" FontSize="18" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" Grid.Column="1" />
             <Switch HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="59" HeightRequest="30" OnColor="lightGray" ThumbColor="#ffffff" Grid.Column="2" x:Name="OnOffSwitch" Toggled="OnOffSwitch_Toggled"/>
         </Grid>
-        <ct:TabView TabIndicatorColor="#FFDE9A"  TabIndicatorPlacement="Bottom" TabStripPlacement="Bottom">
-        <ct:TabViewItem Text="Timer" TextColor="#939292" TextColorSelected="#FFDE9A">
-            <views:LighBulbTimerView/>
-        </ct:TabViewItem>
-        <ct:TabViewItem Text="Color" TextColor="#939292" TextColorSelected="#FFDE9A">
-            <views:LightBulbColorView/>
+        <!--        <ct:TabView TabIndicatorColor="#FFDE9A"  TabIndicatorPlacement="Bottom" TabStripPlacement="Bottom">
+            <ct:TabViewItem Text="Color" TextColor="#939292" TextColorSelected="#FFDE9A">
+                <views:LightBulbColorView/>
             </ct:TabViewItem>
-    </ct:TabView>
-    </StackLayout>
+            <ct:TabViewItem Text="Timer" TextColor="#939292" TextColorSelected="#FFDE9A">
+                <views:LighBulbTimerView/>
+            </ct:TabViewItem>
+        </ct:TabView>-->
+        <views:LightBulbColorView x:Name="ColorTab" Grid.Row="1"/>
+        <views:LighBulbTimerView IsVisible="false" x:Name="TimerTab" Grid.Row="1"/>
+        <Grid ColumnDefinitions="*,*" VerticalOptions="End" HorizontalOptions="Fill" Grid.Row="2">
+            <Button Text="Color" TextColor="White" Clicked="ShowColorTab" BackgroundColor="Transparent"/>
+            <Button Text="Timer" TextColor="White" Grid.Column="1" Clicked="ShowTimerTab" BackgroundColor="Transparent"/>
+        </Grid>
+    </Grid>
 </ContentPage>

@@ -16,6 +16,7 @@ using Android.Gms.Auth.Api.SignIn;
 using Android.Gms.Auth.Api;
 using Android.Content;
 using Android.Gms.Common.Apis;
+using CarouselView.FormsPlugin.Android;
 
 namespace Homence_Smart_Device.Droid
 {
@@ -29,6 +30,8 @@ namespace Homence_Smart_Device.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             FormsMaterial.Init(this, savedInstanceState);
+
+            CarouselViewRenderer.Init();
             LoadApplication(new App());
 
 

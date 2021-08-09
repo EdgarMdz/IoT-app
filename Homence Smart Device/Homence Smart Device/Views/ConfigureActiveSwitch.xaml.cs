@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Homence_Smart_Device.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace Homence_Smart_Device.Views
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-        }
+        }       
 
         private  void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
@@ -25,12 +27,31 @@ namespace Homence_Smart_Device.Views
 
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
-            await App.Current.MainPage.Navigation.PopAsync(true);
+            await Application.Current.MainPage.Navigation.PopAsync(true);
         }
 
         private void OnOffSwitch_Toggled(object sender, ToggledEventArgs e)
         {
 
         }
+
+        private void ShowColorTab(object sender, EventArgs e)
+        {
+            HideAllTabs();
+            ColorTab.IsVisible = true;
+        }
+        private void ShowTimerTab(object sender, EventArgs e)
+        {
+            HideAllTabs();
+            TimerTab.IsVisible = true;
+        }
+
+        private void HideAllTabs()
+        {
+            ColorTab.IsVisible = false;
+            TimerTab.IsVisible = false;
+        }
+
+        
     }
 }

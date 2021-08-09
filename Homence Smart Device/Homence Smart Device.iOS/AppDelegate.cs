@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using CarouselView.FormsPlugin.iOS;
 using Foundation;
 using ProgressRingControl.Forms.Plugin.iOS;
 using UIKit;
@@ -28,7 +28,8 @@ namespace Homence_Smart_Device.iOS
 
             FormsMaterial.Init();
             ProgressRingRenderer.Init();
-            
+            CarouselViewRenderer.Init();
+
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }
