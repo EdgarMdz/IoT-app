@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Homence_Smart_Device.ViewModels"
+             x:Class="Homence_Smart_Device.Views.NewEventView" BackgroundColor="Black"
+             Padding="0,10">
+    <ContentPage.BindingContext>
+        <vm:TimerValuesViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+
+    <Grid VerticalOptions="Fill" HorizontalOptions="Fill" RowDefinitions="10*,0.7*">
+        <ScrollView VerticalScrollBarVisibility="Never">
+            <StackLayout Spacing="10" Padding="10">
+                <Label Text="New event" TextColor="White" FontSize="40" FontFamily="Poppins Bold" HorizontalTextAlignment="Center"/>
+                <Grid>
+                    <Frame BackgroundColor="#646464" CornerRadius="15" Opacity="0.3"
+                               HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                    <FlexLayout Direction="Column" Padding="10,0,10,15">
+                        <Label Text="Trigger" HorizontalTextAlignment="Start" FontFamily="Poppins Bold" FontSize="25" TextColor="White"/>
+                        <RadioButton x:Name="atTimeBtn" TextColor="#EED7A7" Content="At time" IsChecked="True" CheckedChanged="RadioButton_CheckedChanged"/>
+                        <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceEvenly" HeightRequest="100" HorizontalOptions="Fill" IsVisible="{Binding Source={x:Reference atTimeBtn}, Path=IsChecked}">
+                            <Picker x:Name="hourPicker" ItemsSource="{Binding Values.HourValues}" TextColor="White" Grid.Row="1" Grid.Column="0"
+                                HorizontalOptions="Fill" VerticalOptions="Fill" SelectedIndex="0" FontFamily="Poppins Medium" FontSize="20"
+                                VerticalTextAlignment="Center" HorizontalTextAlignment="Center" WidthRequest="50"/>
+                            <Picker x:Name="minutePicker" ItemsSource="{Binding Values.MinuteAndSecondValues}" TextColor="White"
+                                HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1" SelectedIndex="0" FontFamily="Poppins Medium" 
+                                FontSize="20" WidthRequest="50"/>
+                            <Picker x:Name="secondPicker" ItemsSource="{Binding Values.PeriodOfDay}" TextColor="White" HorizontalTextAlignment="Center"
+                                Grid.Row="1" Grid.Column="2" SelectedIndex="0" FontFamily="Poppins Medium" FontSize="20" WidthRequest="50"/>
+                        </FlexLayout>
+                        <RadioButton Content="At sunrise" TextColor="#BCC0C4" IsChecked="False" CheckedChanged="RadioButton_CheckedChanged"/>
+                        <RadioButton TextColor="#BCC0C4" IsChecked="False" Content ="At sunset" CheckedChanged="RadioButton_CheckedChanged"/>
+                    </FlexLayout>
+                </Grid>
+                <Grid>
+                    <Frame BackgroundColor="#646464" CornerRadius="15" Opacity="0.3"
+                               HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Padding="10,0">
+                        <Label Text="Random offset" FontSize="25" TextColor="White" HorizontalTextAlignment="Start"  FontFamily="Poppins Bold" Margin="0,0,0,0"/>
+                        <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceEvenly">
+                            <Label Text="Before" FontSize="20" FontFamily="Poppins Medium"/>
+                            <Picker x:Name="beforeMinutePicker" ItemsSource="{Binding Values.MinuteAndSecondValues}" TextColor="#EED7A7"
+                                HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1" SelectedIndex="0" 
+                                FontFamily="Poppins Bold" FontSize="20" WidthRequest="50"/>
+                            <Label Text="min" FontSize="20" FontFamily="Poppins Medium"/>
+                        </FlexLayout>
+                        <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceEvenly"  Padding="0,0,0,15">
+                            <Label Text="After" FontSize="20" FontFamily="Poppins Medium" />
+                            <Picker x:Name="afterMinutePicker" ItemsSource="{Binding Values.MinuteAndSecondValues}" TextColor="#EED7A7"
+                                HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1" SelectedIndex="0" 
+                                FontFamily="Poppins Bold" FontSize="20" Margin="15,0,0,0" WidthRequest="50"/>
+                            <Label Text="min" FontSize="20" FontFamily="Poppins Medium"/>
+                        </FlexLayout>
+                    </StackLayout>
+                </Grid>
+                <Grid>
+                    <Frame BackgroundColor="#646464" CornerRadius="15" Opacity="0.3"
+                               HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="Repeat" FontSize="25" FontFamily="Poppins Bold" Margin="10,0" TextColor="White"/>
+                        <FlexLayout Direction="Row" JustifyContent="SpaceEvenly" AlignItems="Center"  Padding="0,0,0,15">
+                            <Label Text="Su" FontSize="20" FontFamily="Poppins Medium" TextColor="DimGray">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="Mo" FontSize="20" FontFamily="Poppins Medium" TextColor="DimGray">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="Tu" FontSize="20" FontFamily="Poppins Medium" TextColor="DimGray">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="We" FontSize="20" FontFamily="Poppins Medium" TextColor="DimGray">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="Th" FontSize="20" FontFamily="Poppins Medium" TextColor="DimGray">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="Fr" FontSize="20" FontFamily="Poppins Medium" TextColor="DimGray" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="Sa" FontSize="20" FontFamily="Poppins Medium" TextColor="DimGray">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </FlexLayout>
+                    </StackLayout>
+                </Grid>
+                <Grid>
+                    <Frame BackgroundColor="#646464" CornerRadius="15" Opacity="0.3"
+                               HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="Command" FontSize="25" FontFamily="Poppins Bold" TextColor="White" Margin="10,0"/>
+                        <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceEvenly" Padding="0,0,0,15" >
+                            <Label FontFamily="Poppins Medium" FontSize="20" Text="Turn on" TextColor="#DFC285">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label FontFamily="Poppins Medium" FontSize="20" Text="Turn off" TextColor="DimGray">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </FlexLayout>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+        <Grid Grid.Row="1" HorizontalOptions="Fill" Opacity=".8">
+            <BoxView BackgroundColor="Transparent">
+                <BoxView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStopCollection>
+                            <GradientStop Color="Transparent" Offset="0.4"/>
+                            <GradientStop Color="#66646464" Offset="0.6"/>
+                            <GradientStop Color="#4a646464" Offset="1.0"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <FlexLayout  Direction="Row" AlignItems="End" JustifyContent="SpaceEvenly" BackgroundColor="Transparent">
+                <Button Text="Save" TextColor="#FFD57E" FontFamily="Poppins Bold" FontSize="20" BackgroundColor="Transparent" Clicked="SaveEvent"/>
+                <Button Text="Cancel" TextColor="#FFD57E" FontFamily="Poppins Bold" FontSize="20" BackgroundColor="Transparent" Clicked="CancelEvent"/>
+            </FlexLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

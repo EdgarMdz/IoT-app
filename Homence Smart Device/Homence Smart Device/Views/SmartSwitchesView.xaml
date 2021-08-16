@@ -20,7 +20,7 @@
             </Grid.GestureRecognizers>
         </Grid>
         <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always" Grid.Row="2" Padding="25,20">
-            <StackLayout Orientation="Vertical" BindableLayout.ItemsSource="{Binding smartSwitches }">
+            <StackLayout Orientation="Vertical" BindableLayout.ItemsSource="{Binding SmartSwitches }">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <Grid>

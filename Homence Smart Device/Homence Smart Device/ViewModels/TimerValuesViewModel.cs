@@ -19,7 +19,8 @@ namespace Homence_Smart_Device.ViewModels
             return new TimerValues()
             {
                 HourValues = InitializeValues(0, 99),
-                MinuteAndSecondValues = InitializeValues(0, 59)
+                MinuteAndSecondValues = InitializeValues(0, 59),
+                PeriodOfDay = new List<string> { "AM", "PM" }
             };
         }
 

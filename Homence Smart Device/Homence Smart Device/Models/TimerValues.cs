@@ -8,5 +8,6 @@ namespace Homence_Smart_Device.Models
     {
         public List<string> HourValues { get; set; }
         public List<string> MinuteAndSecondValues { get; set; }
+        public List<string> PeriodOfDay { get; set; }
     }
 }

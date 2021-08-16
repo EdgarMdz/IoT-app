@@ -4,12 +4,9 @@ using System.Text;
 
 namespace Homence_Smart_Device.Models
 {
-    public class SmartSwitch : BaseModel
+    public class SmartSwitch 
     {
-        private string name;
-        private List<LightBulb> lightBulbs;
-
-        public string Name { get => name; set { name = value; OnPropertyChanged(); } }
-        public List<LightBulb> LightBulbs { get => lightBulbs; set { lightBulbs = value; OnPropertyChanged(); } }
+        public string Name { get; set; }
+        public List<LightBulb> LightBulbs { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Homence_Smart_Device.Models
 {
-    public class BaseModel: INotifyPropertyChanged
+    public class BaseViewModel: INotifyPropertyChanged
     {
 
         public event PropertyChangedEventHandler PropertyChanged;

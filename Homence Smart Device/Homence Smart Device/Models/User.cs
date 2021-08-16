@@ -4,15 +4,12 @@ using System.Text;
 
 namespace Homence_Smart_Device.Models
 {
-    public class User : BaseModel
+    public class User
     {
-        private string name;
-        private string email;
-        private Uri picture;
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public Uri Picture { get; set; }
 
-        public string Name { get => name; set { name = value; OnPropertyChanged(); } }
-        public string Email { get => email; set { email = value; OnPropertyChanged(); } }
-        public Uri Picture { get => picture; set { picture = value; OnPropertyChanged(); } }
     }
     public interface IGoogleManager
     {

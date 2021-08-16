@@ -191,4 +191,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\userIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TrashCanIcon.png" />
+  </ItemGroup>
 </Project>

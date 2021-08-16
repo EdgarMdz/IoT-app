@@ -60,5 +60,6 @@ namespace Homence_Smart_Device.Views
             }
 
         }
+
     }
 }

@@ -7,20 +7,15 @@ using Xamarin.Forms;
 
 namespace Homence_Smart_Device.Models
 {
-    public class LightBulb : BaseModel
+    public class LightBulb
     {
-        private string name;
-        private int dimmingValue;
-        private string image;
-        private List<Color> colors;
-        private bool isSmartBulb;
-        private bool isBussy;
+        public string Name { get; set; }
+        public int DimmingValue { get; set; }
+        public string Image { get; set; }
+        public List<Color> Colors { get; set; }
+        public bool IsSmartBulb { get; set; }
+        public bool IsBussy { get; set; }
+        public List<(DateTime date, TimeSpan offset, bool AtSunset, bool AtSunrise, bool[] repetitionDays, LightBulbCommand command, bool isEnabled)> AlarmList { get; set; }
 
-        public string Name { get => name; set { name = value; OnPropertyChanged(); } }
-        public int DimmingValue { get => dimmingValue; set { dimmingValue = value; OnPropertyChanged(); } }
-        public string Image { get => image; set { image = value; OnPropertyChanged(); } }
-        public List<Color> Colors { get => colors; set { colors = value; OnPropertyChanged(); } }
-        public bool IsSmartBulb { get => isSmartBulb; set { isSmartBulb = value; OnPropertyChanged(); } }
-        public bool IsBussy { get => isBussy; set { isBussy = value; OnPropertyChanged(); } }
     }
 }

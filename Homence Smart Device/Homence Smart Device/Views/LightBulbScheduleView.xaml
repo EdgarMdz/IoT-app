@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Homence_Smart_Device.ViewModels"
+             x:Class="Homence_Smart_Device.Views.LightBulbScheduleView">
+    <ContentView.BindingContext>
+        <vm:SmartSwitchViewModel x:Name="vm"/>
+    </ContentView.BindingContext>
+    <ScrollView VerticalScrollBarVisibility="Never" VerticalOptions="Fill" HorizontalOptions="Fill">
+        <StackLayout x:Name="stackLayout" Orientation="Vertical" Spacing="10" HorizontalOptions="Fill">
+            <SwipeView Margin="10,0" BackgroundColor="Transparent">
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Delete" BackgroundColor="Red" IconImageSource="TrashCanIcon.png" Invoked="SwipeItem_Invoked"/>
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="3*,*" HeightRequest="150" BackgroundColor="Black" >
+                    <Frame BackgroundColor="#646464" CornerRadius="15" Opacity="0.3"
+                               HorizontalOptions="Fill" VerticalOptions="Fill" Grid.ColumnSpan="2" Grid.RowSpan="5"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="6:30 AM" TextColor="White" FontFamily="Poppins Bold" FontSize="20" Margin="10,0"/>
+                    <Label Grid.Row="2" Grid.Column="0" Text="Mon, Aug 2nd" TextColor="#e1e1e1" FontFamily="Poppins Bold" FontSize="15" Margin="10,0"/>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Turn On" TextColor="#e1e1e1" FontFamily="Poppins Bold" FontSize="15" Margin="10,0"/>
+                    <Button BackgroundColor="Transparent"  Grid.ColumnSpan="2" Grid.RowSpan="5" Clicked="Button_Clicked"/>
+                    <Switch Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" IsToggled="True" HorizontalOptions="Center" VerticalOptions="Center" 
+                                WidthRequest="59" HeightRequest="30" OnColor="lightGray" ThumbColor="#ffffff"/>
+                </Grid>
+            </SwipeView>
+            <SwipeView Margin="10,0" BackgroundColor="Transparent">
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Delete"  BackgroundColor="Red" IconImageSource="TrashCanIcon.png" Invoked="SwipeItem_Invoked"/>
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="3*,*" HeightRequest="150" BackgroundColor="Black">
+                    <Frame BackgroundColor="#646464" CornerRadius="15" Opacity="0.3"
+                               HorizontalOptions="Fill" VerticalOptions="Fill" Grid.ColumnSpan="2" Grid.RowSpan="5"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="At sunset" TextColor="White" FontFamily="Poppins Bold" FontSize="20" Margin="10,0"/>
+                    <Label Grid.Row="2" Grid.Column="0" FontFamily="Poppins Bold" FontSize="15" Margin="10,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="S " TextColor="#DFC285"/>
+                                <Span Text="M " TextColor="#DFC285"/>
+                                <Span Text="T " TextColor="#DFC285"/>
+                                <Span Text="W " TextColor="#DFC285"/>
+                                <Span Text="T " TextColor="#DFC285"/>
+                                <Span Text="F " TextColor="#DFC285"/>
+                                <Span Text="S" TextColor="#7FBDBDBD"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Turn On" TextColor="#e1e1e1" FontFamily="Poppins Bold" FontSize="15" Margin="10,0"/>
+                    <Switch Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" IsToggled="True" HorizontalOptions="Center" VerticalOptions="Center" 
+                                WidthRequest="59" HeightRequest="30" OnColor="lightGray" ThumbColor="#ffffff"/>
+                </Grid>
+            </SwipeView>
+            <SwipeView Margin="10,0" BackgroundColor="Transparent">
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Delete" BackgroundColor="Red" IconImageSource="TrashCanIcon.png" Invoked="SwipeItem_Invoked"/>
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="3*,*" HeightRequest="150" BackgroundColor="Black">
+                    <Frame BackgroundColor="#646464" CornerRadius="15" Opacity="0.3"
+                               HorizontalOptions="Fill" VerticalOptions="Fill" Grid.ColumnSpan="2" Grid.RowSpan="5"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Random between 6:00 PM and 6:15 PM" TextColor="#AEAEAE" FontFamily="Poppins Bold" FontSize="20" Margin="10,0"/>
+                    <Label Grid.Row="2" Grid.Column="0" FontFamily="Poppins Bold" FontSize="15" Margin="10,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="S " TextColor="#AEAEAE"/>
+                                <Span Text="M " TextColor="#AEAEAE"/>
+                                <Span Text="T " TextColor="#AEAEAE"/>
+                                <Span Text="W " TextColor="#AEAEAE"/>
+                                <Span Text="T " TextColor="#AEAEAE"/>
+                                <Span Text="F " TextColor="#AEAEAE"/>
+                                <Span Text="S" TextColor="#AEAEAE"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Turn On" TextColor="#e1e1e1" FontFamily="Poppins Bold" FontSize="15" Margin="10,0"/>
+                    <Switch Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" IsToggled="False" HorizontalOptions="Center" VerticalOptions="Center" 
+                                WidthRequest="59" HeightRequest="30" OnColor="lightGray" ThumbColor="#ffffff"/>
+                </Grid>
+            </SwipeView>
+            <!-- <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete" IconImageSource="TrashCanIcon.png" BackgroundColor="Tomato" Invoked="SwipeItem_Invoked"/>
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                    <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="3*,*">
+                        <Frame BackgroundColor="#646464" CornerRadius="10" Opacity="0.3"
+                               HorizontalOptions="Fill" VerticalOptions="Fill" Grid.ColumnSpan="2" Grid.RowSpan="5"/>
+                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding date.TimeOfDay}" TextColor="White" FontFamily="Poppins Bold" FontSize="20"/>
+                        <Label Grid.Row="2" Grid.Column="0" Text="{Binding command}" TextColor="#e1e1e1" FontFamily="Poppins Bold" FontSize="15"/>
+                        <Label Grid.Row="3" Grid.Column="0" Text="{Binding date.DayOfYear}" TextColor="#e1e1e1" FontFamily="Poppins Bold" FontSize="15"/>
+                        <Switch Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" IsToggled="{Binding isEnabled}" HorizontalOptions="Center" VerticalOptions="Center" 
+                                WidthRequest="59" HeightRequest="30" OnColor="lightGray" ThumbColor="#ffffff"/>
+                    </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>-->
+        </StackLayout>
+    </ScrollView>
+</ContentView>
