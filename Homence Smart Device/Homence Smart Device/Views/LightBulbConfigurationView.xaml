@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:Homence_Smart_Device.Views"
+             x:Class="Homence_Smart_Device.Views.LightBulbConfigurationView">
+
+    <ScrollView VerticalOptions="Fill" HorizontalOptions="Fill" VerticalScrollBarVisibility="Never">
+        <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" Spacing="40">
+            <Entry x:Name="LightBulbNameEntry" TextColor="White" FontFamily="Poppins Bold" FontSize="20" HorizontalTextAlignment="Start" Margin="10,2"
+                   Placeholder="Name" PlaceholderColor="#BDB4B4" HorizontalOptions="Fill" HeightRequest="80" BackgroundColor="Transparent" TextChanged="LightBulbNameEntry_TextChanged" />
+            <views:SelectLightBulbType  x:Name="LightBulbTypeSelector" Text="Select the light bulb type" Opacity="0.9" HorizontalOptions="Fill" VerticalOptions="Center" 
+                                          HeightRequest="202" SelectedItemChanged="LightBulbTypeSelector_SelectedItemChanged"/>
+            <views:LightBulbBrandView  x:Name="BrandSelector" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="202" Opacity="0.9" IsVisible="False" />
+            <Grid>
+                <Frame BackgroundColor="#646464" CornerRadius="10" Opacity="0.3"/>
+                <FlexLayout HorizontalOptions="Fill" Direction="Column" AlignItems="Start" JustifyContent="SpaceAround" Margin="10,2" Padding="10,2">
+                    <Label Text="Turning on/off options" FontFamily="Poppins Bold" FontSize="25" TextColor="White" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Label Text="Turn light on gradually"/>
+                        <Switch IsToggled="False" HeightRequest="30" WidthRequest="60" ThumbColor="LightGray" OnColor="White"
+                            HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Label Text="Turn light off gradually"/>
+                        <Switch IsToggled="False" HeightRequest="30" WidthRequest="60" ThumbColor="LightGray" OnColor="White"
+                            HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </StackLayout>
+                </FlexLayout>
+            </Grid>
+            <Button Text="Delete" BackgroundColor="Red" TextColor="White" FontFamily="Poppins Bold" FontSize="25" 
+                    WidthRequest="550" HeightRequest="70" CornerRadius="25" Margin="10,2"/>
+        </StackLayout>
+    </ScrollView>
+</ContentView>

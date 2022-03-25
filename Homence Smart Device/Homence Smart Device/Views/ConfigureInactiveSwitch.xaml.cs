@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace Homence_Smart_Device.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ConfigureSwitch : ContentPage
+    public partial class ConfigureInactiveSwitch : ContentPage
     {
-        public ConfigureSwitch()
+        public ConfigureInactiveSwitch()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
@@ -28,18 +28,6 @@ namespace Homence_Smart_Device.Views
         {
             await Application.Current.MainPage.Navigation.PopAsync();
         }
-
-        /*private void LightBulbBrandView_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == nameof(IsVisible))
-            {
-                var control = sender as LightBulbBrandView;
-                if (control is null) return;
-
-                if (control.IsVisible)
-                    DisplayView(control);
-            }
-        }*/
 
         private void DisplayView(LightBulbBrandView control, double start, double end)
         {
@@ -72,5 +60,6 @@ namespace Homence_Smart_Device.Views
             }
 
         }
+
     }
 }

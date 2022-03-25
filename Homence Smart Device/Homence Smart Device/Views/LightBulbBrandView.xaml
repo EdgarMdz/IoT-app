@@ -12,7 +12,7 @@
             <ImageButton x:Name="HueBtn" Grid.Column="0" Source="hue.png" BackgroundColor="#CCC4C4C4" WidthRequest="100" HeightRequest="100" CornerRadius="15" Opacity="0.8" Clicked="ImageButton_Clicked"/>
             <ImageButton x:Name="LifxBtn" Grid.Column="1" Source="lifx.png" BackgroundColor="#CCC4C4C4" WidthRequest="100" HeightRequest="100" CornerRadius="15" Opacity="0.8" Clicked="ImageButton_Clicked"/>
             <ImageButton x:Name="NanoleafBtn" Grid.Column="2" Source="nanoleaf.png" BackgroundColor="#CCC4C4C4" WidthRequest="100" HeightRequest="100" CornerRadius="15" Opacity="0.8" Clicked="ImageButton_Clicked"/>
-            <Button x:Name="OtherBtn" Grid.Column="3" Text="Other" FontSize="Body" BackgroundColor="#CCC4C4C4" WidthRequest="100" HeightRequest="100" CornerRadius="15" Opacity="0.8" Clicked="ImageButton_Clicked"/>
+            <Button x:Name="OtherBtn" Grid.Column="3" Text="Other" FontSize="14" BackgroundColor="#CCC4C4C4" WidthRequest="100" HeightRequest="100" CornerRadius="15" Opacity="0.8" Clicked="ImageButton_Clicked" FontFamily="Poppins Bold"/>
         </Grid>
     </StackLayout>
 </Grid>

@@ -7,8 +7,20 @@ using Xamarin.Forms;
 
 namespace Homence_Smart_Device.ViewModels
 {
-    class DevicesViewModel
+    class DevicesViewModel : BaseViewModel
     {
-        public List<LightBulb> Lights { get; set; }
+        private List<LightBulb> lights;
+
+        public List<LightBulb> Lights
+        {
+            get => lights; set
+            {
+                if (value != lights)
+                {
+                    lights = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
     }
 }

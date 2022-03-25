@@ -6,15 +6,27 @@ using Xamarin.Forms;
 
 namespace Homence_Smart_Device.ViewModels
 {
-    class SmartSwitchViewModel
+    class SmartSwitchViewModel : BaseViewModel
     {
-        public List<SmartSwitch> smartSwitches { get; set; }
+        private List<SmartSwitch> smartSwitches;
+
+        public List<SmartSwitch> SmartSwitches
+        {
+            get => smartSwitches; set
+            {
+                if (value != smartSwitches)
+                {
+                    smartSwitches = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         public SmartSwitchViewModel() => Initialize();
 
         private void Initialize()
         {
-            smartSwitches = new List<SmartSwitch>()
+            SmartSwitches = new List<SmartSwitch>()
             {
                 new SmartSwitch
                 {
@@ -22,7 +34,13 @@ namespace Homence_Smart_Device.ViewModels
                     LightBulbs=new List<LightBulb>
                     {
                         new LightBulb{Name="Device 1", Colors=new List<Color>(){ Color.White },
-                            DimmingValue=120, Image="lightbulbicon.png",IsSmartBulb=false},
+                            DimmingValue=120, Image="lightbulbicon.png",IsSmartBulb=false,
+                            AlarmList =new List<(DateTime date, TimeSpan offset, bool AtSunset, bool AtSunrise, bool[] repetitionDays, LightBulbCommand command, bool isEnabled)>()
+                            {
+                               (DateTime.Now, new TimeSpan(0,30,0),false,false,new bool[]{false,false,true,false,true,false,true}, LightBulbCommand.TurnOn, true),
+                               (new   DateTime(2021,08,30),new TimeSpan(0),false,false, new bool[]{false,false,false,false,false,false,false}, LightBulbCommand.TurnOff,false)
+                            }
+                        },
                         new LightBulb{Name="Device 2", Colors = new List<Color>(){ Color.Magenta, Color.CadetBlue, Color.Chocolate, Color.CornflowerBlue,
                             Color.DeepPink, Color.ForestGreen, Color.MediumPurple, Color.LightSeaGreen, Color.OrangeRed, Color.Coral},
                             DimmingValue=0, Image="SmartBulbIcon.png", IsSmartBulb=true},
